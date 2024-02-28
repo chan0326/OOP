@@ -56,7 +56,20 @@ public class Authcontroller  {
 
     public String idResarch(Scanner sc) {
         System.out.println("검색하려는 ID를 입력하세요");
-        String idResarchAnswer = sc.next();
-        return idResarchAnswer;
+        return as.idResarch(sc.next());
+    }
+
+    public String findUserById(Scanner sc) {
+        System.out.println(" ID입력");
+        System.out.println("수정 PW입력");
+        return as.findUserById(new MemberBuilder()
+                .username(sc.next())
+                .pw(sc.next())
+                .build());
+    }
+
+    public String deleteUser(Scanner sc) {
+        System.out.println("삭제할 ID를 입력하세요");
+        return as.deleteUser(sc.next());
     }
 }

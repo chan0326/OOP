@@ -11,7 +11,14 @@ public interface AuthService {
     String count();
 
     String getUserList();
+
     String join(MemberDto memberDto);
+
     String login(MemberDto memberDto);
+
     String idResarch(String username);
+
+    String findUserById(MemberDto memberDto);
+
+    String deleteUser(String username);
 }

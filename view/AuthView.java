@@ -41,10 +41,11 @@ public class AuthView {
                     break;
                 case "4":
                     System.out.println("4-비번변경");
-
+                    ctri.findUserById(sc);
                     break;
                 case "5":
                     System.out.println("5-탈퇴");
+                    ctri.deleteUser(sc);
                     break;
                 case "6":
                     System.out.println("6-회원목록");

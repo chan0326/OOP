@@ -71,12 +71,35 @@ public class AuthServiceImpl implements AuthService {
         MemberDto mapInusers = users.get(username);
         if (mapInusers == null){
             System.out.println("해당 ID가 존재하지 않습니다");
-
         }else {
             System.out.println("해당 ID가 존재합니다");
             System.out.println(mapInusers);
         }
 
+        return "";
+    }
+
+    @Override
+    public String findUserById(MemberDto memberDto) {
+        MemberDto Mapinuser = users.get(memberDto.getUsername());
+        if (Mapinuser == null){
+            System.out.println("ID가 틀렸습니다");
+        }else {
+            System.out.println("비밀번호를 수정하였습니다");
+            Mapinuser.setPw(memberDto.getPw());
+        }
+        return "";
+    }
+
+    @Override
+    public String deleteUser(String username) {
+        MemberDto Mapinuser = users.get(username);
+        if (Mapinuser == null){
+            System.out.println("ID가 틀렸습니다");
+        }else {
+            System.out.println(username+"ID를 삭제하였습니다.");
+            users.remove(username);
+        }
         return "";
     }
 }
