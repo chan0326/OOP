@@ -53,9 +53,9 @@ public class AuthView {
                     break;
                 case "7":
                     System.out.println("7-이름검색");
-                    ctri.findUsersByName(sc).forEach((i))->{
-                    System.out.println(i);
-                };
+//                    ctri.findUsersByName(sc).forEach((i))->{
+//                    System.out.println(i);
+//                });
                     break;
 
                 case "8":
