@@ -8,8 +8,11 @@ public interface AccountService {
 
     String deposit(AccountDto accountDto);
     String withdraw(AccountDto accountDto);
-    List<AccountDto> getBalance(String accountNumber);
+    String getBalance(String accountNumber);
     String cancelAccount(String accountNumber);
 
     String createAccount(AccountDto accountDto);
+    List<AccountDto> grtAccounts();
+
+
 }

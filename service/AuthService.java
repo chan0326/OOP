@@ -2,13 +2,12 @@ package service;
 
 import model.MemberDto;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
 public interface AuthService {
     String addusers();
-
-    String count();
 
     String getUserList();
 
@@ -22,4 +21,8 @@ public interface AuthService {
 
     String deleteUser(String username);
 
+    String count();
+
+
+    List<MemberDto> findUsersByName(String name);
 }

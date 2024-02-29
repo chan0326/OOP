@@ -17,7 +17,8 @@ public class AcoountView {
                     "2-Deposit\n " +
                     "3-Withdraw\n " +
                     "4-Balance\n"+
-                    "5-RemoveAccount\n"
+                    "5-RemoveAccount\n"+
+                    "6-AccountList\n"
                     );
             switch (sc.next()){
                 case "0":
@@ -37,10 +38,15 @@ public class AcoountView {
                     break;
                 case "4":
                     System.out.println("4-Balance");
-                    System.out.println(ac.getBalance());
-                    break;case "5":
-                    System.out.println("4-RemoveAccount");
+                    System.out.println(ac.getBalance(sc));
+                    break;
+                case "5":
+                    System.out.println("5-RemoveAccount");
                     System.out.println(ac.cancelAccount(sc));
+                    break;
+                case "6":
+                    System.out.println("6-AccountList");
+                    System.out.println();
                     break;
 
             }

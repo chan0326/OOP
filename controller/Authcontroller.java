@@ -5,7 +5,7 @@ import model.MemberDto;
 import service.AuthService;
 import serviceimpl.AuthServiceImpl;
 
-import java.util.Map;
+import java.util.List;
 import java.util.Scanner;
 
 public class Authcontroller  {
@@ -73,10 +73,8 @@ public class Authcontroller  {
         return as.deleteUser(sc.next());
     }
 
-    public String findUsersByName(Scanner sc) {
-//        System.out.println("ID를 입력하세요");
+    public List<MemberDto> findUsersByName(Scanner sc) {
         System.out.println("찾는 이름을 입력하세요");
-//        return as.findUsersByName(new )
-        return "";
+        return as.findUsersByName(sc.next());
     }
 }

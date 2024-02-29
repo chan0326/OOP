@@ -32,6 +32,11 @@ public class AcoountServiceImpl implements AccountService  {
     }
 
     @Override
+    public List<AccountDto> grtAccounts() {
+        return null;
+    }
+
+    @Override
     public String deposit(AccountDto accountDto) {
 
 //        if (){}
@@ -46,7 +51,7 @@ public class AcoountServiceImpl implements AccountService  {
     }
 
     @Override
-    public List getBalance(String accountNumber) {
+    public String getBalance(String accountNumber) {
         return null;
     }
 

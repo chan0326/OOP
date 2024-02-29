@@ -3,25 +3,23 @@ package serviceimpl;
 import builder.MemberBuilder;
 import model.MemberDto;
 import service.AuthService;
-import service.GradeService;
 import service.UtilService;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class AuthServiceImpl implements AuthService {
     private  static AuthService instance = new AuthServiceImpl();
 
+    Map<String,MemberDto> users ;
+
+
     private AuthServiceImpl(){
         this.users =  new HashMap<>();
     }
-
     public static AuthService getInstance(){
         return instance;
     }
 
-    Map<String,MemberDto> users ;
 
 
 
@@ -47,10 +45,18 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
+    public java.util.List<MemberDto> findUsersByName(String name) {
+        new ArrayList<>(users.values());
+        return null;
+    }
+
+
+    @Override
     public String getUserList() {
         System.out.println(users+"\n");
         return "";
     }
+
 
     @Override
     public String join(MemberDto memberDto) {

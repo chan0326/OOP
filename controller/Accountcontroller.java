@@ -1,9 +1,11 @@
 package controller;
 
 import builder.AccountBuilder;
+import model.AccountDto;
 import service.AccountService;
 import serviceimpl.AcoountServiceImpl;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Accountcontroller {
@@ -48,12 +50,15 @@ public class Accountcontroller {
                 .transactionDate(null)
                 .build());
     }
-    public String getBalance() {
-        return "";
-    }
+    public String getBalance(Scanner sc) {
+        return as.getBalance(sc.next());    }
 
     public String cancelAccount(Scanner sc) {
         return as.cancelAccount(sc.next());
     }
 
+
+    public List<AccountDto> grtAccounts() {
+        return null;
+    }
 }
