@@ -3,11 +3,13 @@ import builder.MemberBuilder;
 import model.MemberDto;
 import service.UserService;
 import serviceimpl.UserServiceImpl;
+
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
 
-public class UserController   {
+public class UserController    {
 
     UserService us ;
 
@@ -42,6 +44,13 @@ public class UserController   {
     public String count() {
         return us.count();
     }
+
+
+    public String deleteUser( Scanner sc) {
+        System.out.println("삭제할 ID를 입력하세요");
+        return us.deleteUser(sc.next());
+    }
+
     public String login(Scanner sc) {
         System.out.println("아이디름 입력하세요");
         System.out.println("비밀번호를 입력하세요");
@@ -69,6 +78,19 @@ public class UserController   {
 
     public Map<String, MemberDto> getUserList(){
         return us.getUserList();
+    }
+
+
+    public String findUsersByName(Scanner sc) {
+//        System.out.println("이름으로 검색");
+        return us.findUsersByName(sc.next()).toString();
+
+    }
+
+    public String findUsersByJob() {
+//        System.out.println("직업으로 검색");
+//        return us.findUsersByJob(sc.next()).toString();
+    return "";
     }
 }
 

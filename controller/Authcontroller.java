@@ -12,7 +12,7 @@ public class Authcontroller  {
     AuthService as ;
 
     public Authcontroller() {
-        this.as = new AuthServiceImpl();
+        this.as =  AuthServiceImpl.getInstance();
     }
 
     public String addusers() {
@@ -71,5 +71,12 @@ public class Authcontroller  {
     public String deleteUser(Scanner sc) {
         System.out.println("삭제할 ID를 입력하세요");
         return as.deleteUser(sc.next());
+    }
+
+    public String findUsersByName(Scanner sc) {
+//        System.out.println("ID를 입력하세요");
+        System.out.println("찾는 이름을 입력하세요");
+//        return as.findUsersByName(new )
+        return "";
     }
 }

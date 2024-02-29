@@ -4,15 +4,19 @@ import model.MemberDto;
 import service.UserService;
 import service.UtilService;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class UserServiceImpl implements UserService {
+
+    List<MemberDto>list;
+
+
+
     Map<String, MemberDto> users ;
 
     public UserServiceImpl() {
         this.users =  new HashMap<>();
+        this.list = new ArrayList<>();
     }
 
     @Override
@@ -51,10 +55,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public String login(MemberDto memberDto) {
 
-//        String username = memberDto.getUsername();
-//        String pw = memberDto.getPw();
-//        System.out.println(username);
-//        System.out.println(pw);
+
         MemberDto meberInMap = users.get(memberDto.getUsername());
         if (meberInMap == null){
             System.out.println("아이디,혹은 비밀번호 오류입니다.");
@@ -84,11 +85,24 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public String deleteUser(String username) {
+        MemberDto usernameInMap = users.get(username);
+        if (usernameInMap == null){
+            System.out.println("ID 오류입니다");
+        }else {users.remove(username);
+            System.out.println(username+"계정을 삭제하였습니다.");}
+        return "";
+    }
+
+    @Override
     public String changePW(MemberDto memberDto) {
         MemberDto usernameInMap = users.get(memberDto.getUsername());
         if (usernameInMap.getUsername().equals(memberDto.getUsername())){
-//            usernameInMap.getPw()=memberDto.getPw();
+            usernameInMap.setPw(memberDto.getPw());
+            System.out.println("비밀번호가 변경되었습니다.");
 
+        }else{
+            System.out.println("해당아이디가 존재하지 않습니다.");
         }
 
 
@@ -97,10 +111,26 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<MemberDto> findUsersByName(String name) {
+        list = (List<MemberDto>) users;
+        System.out.println(list);
+
+
+        return list;
+    }
+
+    @Override
+    public List<MemberDto> findUsersByJob(String job) {
+        list = (List<MemberDto>) users;
+        System.out.println(list);
+        return list;
+    }
+
+    @Override
     public Map<String, MemberDto> getUserList() {
         System.out.println("전체 목록 출력");
         users.forEach((k,v)-> {
-            System.out.printf("아이디: %s, 회원정보: %s", k, v);
+            System.out.printf("아이디: %s, 회원정보: %s\n", k, v);
         });
         return users;
 

@@ -54,6 +54,7 @@ public class AuthView {
                 case "7":
                     System.out.println("7-이름검색");
                     break;
+//                    ctri.findUsersByName(sc);
                 case "8":
                     System.out.println("8-직업검색");
                     break;

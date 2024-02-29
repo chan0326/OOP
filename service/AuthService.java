@@ -21,4 +21,5 @@ public interface AuthService {
     String findUserById(MemberDto memberDto);
 
     String deleteUser(String username);
+
 }

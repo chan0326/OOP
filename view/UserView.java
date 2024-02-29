@@ -47,6 +47,7 @@ public class UserView {
                     break;
                 case "5":
                     System.out.println("5-탈퇴");
+                    ctri.deleteUser(sc);
                     break;
                 case "6":
                     System.out.println("6-회원목록");
@@ -54,9 +55,13 @@ public class UserView {
                     break;
                 case "7":
                     System.out.println("7-이름검색");
+                    ctri.findUsersByName(sc);
+
                     break;
                 case "8":
                     System.out.println("8-직업검색");
+                    ctri.findUsersByJob();
+
                     break;
                 case "9":
                     System.out.println("9-회원수");
